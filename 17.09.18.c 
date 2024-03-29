@@ -1,0 +1,37 @@
+/* Realizzate un programma multi thread in C, completo di commento, che simuli il comportamento di elettori 
+che si recano ad un seggio elettorale per votare, in base alle seguenti specifiche: 
+- gli elettori arrivano al seggio in istanti di tempo casuale; 
+- nel seggio possono essere presenti al massimo 4 elettori allo stesso tempo; 
+- un elettore deve attendere sulla porta se nel seggio sono già presenti 4 elettori; 
+- quando entra nel seggio, un elettore impiega un tempo random, compreso tra TMIN e TMAX, per votare. 
+L'applicazione, durante l'esecuzione, deve visualizzare i seguenti messaggi, in accordo con gli stati in cui 
+si può trovare l'elettore:
+- elettore j arriva al seggio
+- elettore j attende sulla porta
+- elettore j entra nel seggio e vota
+- elettore j esce dal seggio */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
+#include <time.h>
+#include <unistd.h>
+
+#define ELETTORI 4 
+
+
+pthread_mutex_t m ; 
+pthread_cond_t PIENO;  /*variabile condizione accesso al seggio*/
+
+int randSleep(int , int ); /*seme random*/
+
+void *codice_thread(void *arg) {
+  sleep (randSleep(1,4)); 
+  
+
+
+}
+
+
+
